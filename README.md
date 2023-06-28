@@ -14,9 +14,10 @@ ARS is a Google Sheets file that simulates a live casino and allows players to p
 2. Players can enter their bets and press the "Execute" button to update the values.
 3. To calculate the balances of all players, select "calculateAllBalances" from the drop-down menu and press the "Execute" button.
 
-## Video examples
+### Sezioni del foglio:
+## Vista del dealer
 
-- [Video presentation of the ARS file](Insert-link-of-video-here)
+
 
 ## Licence
 
