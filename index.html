@@ -7,105 +7,86 @@
   <title>ARS - Automated Roulette System</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
-  <script src="script.js" defer></script>
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <nav class="navbar">
-        <a href="#" class="navbar-logo">
-          <img src="logo-placeholder.png" alt="ARS Logo">
-        </a>
-        <ul class="navbar-links">
-          <li><a href="#about" class="navbar-link">About</a></li>
-          <li><a href="#features" class="navbar-link">Features</a></li>
-          <li><a href="https://github.com/MN-company/ARS-simulate-gambling" target="_blank" class="navbar-link">GitHub</a></li>
-          <li><a href="#login" class="navbar-link">Login</a></li>
-          <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <a href="#" class="logo">
+        <img src="logo-placeholder.png" alt="ARS Logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="https://github.com/MN-company/ARS-simulate-gambling" target="_blank">GitHub</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">Automated Roulette System</h1>
-      <p class="hero-subtitle">Experience the thrill of a live casino at your fingertips</p>
-      <a href="#" class="hero-button">Get Started</a>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About ARS</h2>
-      <div class="section-content">
-        <div class="section-image" style="background-image: url('about-image.jpg')"></div>
-        <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque
-          elementum
-          convallis. Phasellus consectetur odio sit amet mi tristique blandit. Mauris hendrerit euismod ante a
-          suscipit.
-        </p>
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title">Automated Roulette System</h1>
+        <p class="hero-subtitle">Experience the thrill of a live casino at your fingertips</p>
+        <a href="#" class="hero-button">Get Started</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="features" class="section">
-    <div class="container">
-      <h2 class="section-title">Features</h2>
-      <div class="carousel">
-        <div class="carousel-slide">
-          <div><img src="feature-image1.jpg" alt="Feature 1"></div>
-          <div><img src="feature-image2.jpg" alt="Feature 2"></div>
-          <div><img src="feature-image3.jpg" alt="Feature 3"></div>
-        </div>
-        <div class="carousel-dots">
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
-          <span class="carousel-dot"></span>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About ARS</h2>
+        <div class="section-content">
+          <div class="section-image" style="background-image: url('about-image.jpg')"></div>
+          <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque
+            elementum convallis. Phasellus consectetur odio sit amet mi tristique blandit. Mauris hendrerit euismod ante a
+            suscipit.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div id="login-popup" class="login-popup">
-  <div class="login-popup-content">
-    <span class="close" onclick="closeLoginPopup()">&times;</span>
-    <h3>Login</h3>
-    <form>
-      <input type="text" id="username" placeholder="Username" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="button" onclick="login()">Login</button>
-    </form>
-  </div>
-</div>
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="carousel">
+          <!-- Carousel content -->
+        </div>
+      </div>
+    </section>
 
+    <section id="login" class="section">
+      <div class="container">
+        <h2 class="section-title">Login</h2>
+        <div class="login-form">
+          <!-- Login form content -->
+        </div>
+      </div>
+    </section>
 
-  <section class="mailing-list">
-  <h2>Join Our Mailing List</h2>
-  <form>
-    <input type="email" id="email" placeholder="Enter your email" required>
-    <button type="button" onclick="subscribeToMailingList()">Subscribe</button>
-  </form>
-</section>
+    <section class="mailing-list">
+      <div class="container">
+        <h2>Join Our Mailing List</h2>
+        <form>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
       <p>&copy; 2023 ARS - Automated Roulette System. All rights reserved.</p>
-      <ul class="footer-links">
+      <ul>
         <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
         <li><a href="terms-of-use.html" target="_blank">Terms of Use</a></li>
       </ul>
     </div>
   </footer>
 
-  <div class="cookie-banner">
-    <p>This website uses cookies to ensure you get the best experience on our website. By continuing to browse, you
-      consent to our use of cookies. <a href="#" target="_blank" rel="noopener">Learn more</a></p>
-    <button onclick="acceptCookies()">Accept</button>
-  </div>
-
-  <script src="cookie.js" defer></script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>
