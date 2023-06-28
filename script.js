@@ -1,21 +1,45 @@
-document.getElementById('newsletter-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+// Funzione per mostrare il pop-up di login
+function showLoginPopup() {
+  document.getElementById('login-popup').style.display = 'flex';
+}
 
-  // Get the email input value
-  var emailInput = document.getElementById('newsletter-form').elements['email'];
-  var email = emailInput.value;
+// Funzione per chiudere il pop-up di login
+function closeLoginPopup() {
+  document.getElementById('login-popup').style.display = 'none';
+}
 
-  // Save the email to the database or perform any desired action
-  saveEmailToDatabase(email);
+// Funzione per effettuare il login
+function login() {
+  // Recupera i valori dei campi di input
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
 
-  // Reset the form
-  document.getElementById('newsletter-form').reset();
+  // Effettua le verifiche sui dati di login
+  if (username === 'admin' && password === 'password') {
+    alert('Login successful');
+    closeLoginPopup();
+  } else {
+    alert('Invalid username or password');
+  }
+}
 
-  // Show a success message or perform any desired action
-  alert('Thank you for subscribing!');
-});
+// Funzione per sottoscriversi alla mailing list
+function subscribeToMailingList() {
+  var email = document.getElementById('email').value;
 
-function saveEmailToDatabase(email) {
-  // Perform the necessary steps to save the email to your database or backend system
-  // This is just a placeholder function, you should implement the actual functionality
+  // Effettua le verifiche sull'indirizzo email
+  if (validateEmail(email)) {
+    // Invia l'indirizzo email al server o esegui l'azione desiderata
+    alert('Email subscribed: ' + email);
+    document.getElementById('email').value = '';
+  } else {
+    alert('Invalid email address');
+  }
+}
+
+// Funzione per validare l'indirizzo email
+function validateEmail(email) {
+  // Utilizza un'espressione regolare per la validazione
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
