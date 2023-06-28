@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARS - Automated Roulette System</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
   <script src="script.js" defer></script>
 </head>
 
@@ -13,11 +14,15 @@
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="#" class="navbar-logo">ARS</a>
+        <a href="#" class="navbar-logo">
+          <img src="logo-placeholder.png" alt="ARS Logo">
+        </a>
         <ul class="navbar-links">
           <li><a href="#about" class="navbar-link">About</a></li>
           <li><a href="#features" class="navbar-link">Features</a></li>
-          <li><a href="#contact" class="navbar-link">Contact</a></li>
+          <li><a href="https://github.com/MN-company/ARS-simulate-gambling" target="_blank" class="navbar-link">GitHub</a></li>
+          <li><a href="#login" class="navbar-link">Login</a></li>
+          <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
         </ul>
       </nav>
     </div>
@@ -63,12 +68,13 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="login" class="section">
     <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <form class="contact-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Submit</button>
+      <h2 class="section-title">Login</h2>
+      <form class="login-form">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
       </form>
     </div>
   </section>
@@ -76,6 +82,10 @@
   <footer>
     <div class="container">
       <p>&copy; 2023 ARS - Automated Roulette System. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+        <li><a href="terms-of-use.html" target="_blank">Terms of Use</a></li>
+      </ul>
     </div>
   </footer>
 
