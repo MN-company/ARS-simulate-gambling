@@ -1,184 +1,222 @@
-/* Reset CSS */
-* {
-  box-sizing: border-box;
+/* Global Styles */
+
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-}
-
 .container {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Header Styles */
+
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-}
-
-nav ul {
-  list-style: none;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-#hero {
-  background-color: #f4f4f4;
-  padding: 80px 0;
-  text-align: center;
-}
-
-#hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  background-color: #555;
-}
-
-#about {
-  padding: 40px 0;
-}
-
-#about h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-#features {
-  background-color: #f4f4f4;
-  padding: 40px 0;
-}
-
-#features h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-#features ul {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-#video {
-  padding: 40px 0;
-}
-
-.video-container {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-}
-
-.video-container iframe {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  transition: background-color 0.3s;
 }
 
-#contact {
-  padding: 40px 0;
+header.scrolled {
+  background-color: rgba(255, 255, 255, 1);
 }
 
-#contact h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-#login {
-  background-color: #f4f4f4;
-  padding: 40px 0;
-}
-
-#login h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-form {
-  margin-top: 20px;
-}
-
-form input,
-form button {
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-form button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #555;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-link {
+  margin-left: 15px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ff0000;
+}
+
+/* Hero Section Styles */
+
+.hero-section {
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  padding: 100px 0;
   text-align: center;
 }
 
-footer p {
-  font-size: 14px;
-}
-
-#subscribe {
-  background-color: #f4f4f4;
-  padding: 40px 0;
-}
-
-#subscribe h2 {
-  font-size: 24px;
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
   margin-bottom: 20px;
 }
 
-#subscribe form input,
-#subscribe form button {
-  margin-bottom: 10px;
-  padding: 10px;
+.hero-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
 }
 
-#subscribe form button {
+.hero-button {
+  padding: 12px 24px;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #cc0000;
+}
+
+/* Other Section Styles */
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-image {
+  width: 300px;
+  height: 300px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-right: 40px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.3s;
+}
+
+.section-image:hover {
+  transform: rotate(360deg);
+}
+
+.section-text {
+  flex: 1;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Carousel Styles */
+
+.carousel {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 300%;
+  transition: transform 0.3s;
+}
+
+.carousel-slide > div {
+  flex: 1 0 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #999;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+  background-color: #333;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: #333;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* Cookie Banner Styles */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #333;
   color: #fff;
-  border: none;
-  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
+  z-index: 999;
 }
 
-#subscribe form button:hover {
-  background-color: #555;
+.cookie-banner .cookie-message {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.cookie-banner button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.cookie-banner button:hover {
+  text-decoration: underline;
 }
