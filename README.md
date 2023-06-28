@@ -29,4 +29,5 @@ ARS is currently in beta stage and can be used without any problems. Some values
 ## Future goals
 
 - Create a button to simplify the execution of the script, without having to manually change the function to be executed and without opening the Apps script.
+- Create a method that decide if you have to run calculateAllBalance or load defaultValue
 - Develop overlays for OBS or Streamlabs to enhance the streaming experience.
