@@ -6,92 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARS - Automated Roulette System</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <header>
     <div class="container">
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#video">Video</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#login">Login</a></li>
+      <nav class="navbar">
+        <a href="#" class="navbar-logo">ARS</a>
+        <ul class="navbar-links">
+          <li><a href="#about" class="navbar-link">About</a></li>
+          <li><a href="#features" class="navbar-link">Features</a></li>
+          <li><a href="#contact" class="navbar-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section id="hero">
+  <section class="hero-section">
     <div class="container">
-      <h2>ARS - Automated Roulette System</h2>
-      <p>A virtual casino simulation with a live roulette experience.</p>
-      <a href="#features" class="btn">Learn More</a>
+      <h1 class="hero-title">Automated Roulette System</h1>
+      <p class="hero-subtitle">Experience the thrill of a live casino at your fingertips</p>
+      <a href="#" class="hero-button">Get Started</a>
     </div>
   </section>
 
-  <section id="about">
+  <section id="about" class="section">
     <div class="container">
-      <h2>About ARS</h2>
-      <p>ARS (Automated Roulette System) is a web-based application that simulates a live casino experience. It uses a
-        Google Sheets file as the backend to calculate bets, winnings, and player balances based on the outcomes of a
-        physical roulette wheel.</p>
-      <p>With ARS, players can enjoy the excitement of playing roulette from the comfort of their own homes.</p>
-    </div>
-  </section>
-
-  <section id="features">
-    <div class="container">
-      <h2>Features</h2>
-      <p>ARS offers the following features:</p>
-      <ul>
-        <li>Real-time calculation of bets, winnings, and player balances</li>
-        <li>Easy-to-use interface</li>
-        <li>Secure login system</li>
-        <li>Optimized for performance and speed</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="video">
-    <div class="container">
-      <h2>ARS in Action</h2>
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" frameborder="0"
-          allowfullscreen></iframe>
+      <h2 class="section-title">About ARS</h2>
+      <div class="section-content">
+        <div class="section-image" style="background-image: url('about-image.jpg')"></div>
+        <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque
+          elementum
+          convallis. Phasellus consectetur odio sit amet mi tristique blandit. Mauris hendrerit euismod ante a
+          suscipit.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="features" class="section">
     <div class="container">
-      <h2>Contact Us</h2>
-      <p>For any inquiries or feedback, please contact us at <a href="mailto:email@example.com">email@example.com</a>.
-      </p>
+      <h2 class="section-title">Features</h2>
+      <div class="carousel">
+        <div class="carousel-slide">
+          <div><img src="feature-image1.jpg" alt="Feature 1"></div>
+          <div><img src="feature-image2.jpg" alt="Feature 2"></div>
+          <div><img src="feature-image3.jpg" alt="Feature 3"></div>
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot"></span>
+          <span class="carousel-dot"></span>
+          <span class="carousel-dot"></span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="login">
+  <section id="contact" class="section">
     <div class="container">
-      <h2>Login to ARS</h2>
-      <form>
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button type="submit" class="btn">Login</button>
-      </form>
-    </div>
-  </section>
-
-  <section id="subscribe">
-    <div class="container">
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Stay up to date with the latest news and updates from ARS.</p>
-      <form id="newsletter-form">
-        <input type="email" placeholder="Your email" required>
-        <input type="checkbox" id="consent-checkbox" required>
-        <label for="consent-checkbox">I agree to the <a href="#privacy-policy">privacy policy</a>.</label>
-        <button type="submit" class="btn">Subscribe</button>
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Submit</button>
       </form>
     </div>
   </section>
@@ -102,7 +79,13 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="cookie-banner">
+    <p>This website uses cookies to ensure you get the best experience on our website. By continuing to browse, you
+      consent to our use of cookies. <a href="#" target="_blank" rel="noopener">Learn more</a></p>
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <script src="cookie.js" defer></script>
 </body>
 
 </html>
