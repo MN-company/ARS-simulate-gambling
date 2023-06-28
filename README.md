@@ -20,20 +20,29 @@ ARS is a Google Sheets file that simulates a live casino and allows players to p
 
 ### Roulette table
 ![Roulette table](roulette.png)
-Il dealer avrà sott'occhio rurri i numeri della roulette e dove si trova il numero vincente. Se il numero è valido le celle corrisapondenti alle sue caratteristiche si coloreranno di verde e verrà scritto "VERO".
+The Dealer will be looking at the Roulette numbers to see where the winning number is located. The cells corresponding to its characteristics will turn green and "TRUE" will be written if the number is valid.
 
 ### History and winning number
 ![History of extracted numbers](history.png)
-Il dealer dovrà inserire sotto "Numero vincente" il numero uscito dalla roulette e inserire quest'ultimo nella cronologia dei numeri precedenti.
+The dealer should enter the number that came out of the roulette wheel in the "Winning Number" column and enter it in the history of previous numbers.
 
 ### Information about players
 ![players info](!tabs.png)
-Il dealer avrà sott'occhio nella tabella superiore i valori di default che devono essere cambiati in base alle proprie esigenze. Nella tabella sotto invece ci sono i valori come la scommessa, il bilancio, e la vincità per ogni giocata. Quest'ultimi non vanno cambiati in quanto sono gestiti da formule e script che lavorano autonomamente.
+The Dealer will keep an eye on the default values in the upper table, which must be changed according to his needs. The table below shows values such as the bet, balance and winnings for each bet. These should not be changed as they are handled by formulas and scripts that work independently.
 
 ## Player sheet
 
 ### Bet, return and balance
-!
+![Bet, return and balance](RBB.png)
+These cells delegate the calculation of bet, win/loss and balance to formulas.
+
+### Normal betting 
+![outside bet](regularplayer.png)
+In all grey cells the player must enter the amount of money to be allocated to this bet.
+
+### Other type of betting
+![Other bet](otherbet.png)
+As before, the player must enter the amount of money to be bet in the grey cells and the correct number to bet on in the blue cells. 
 
 ## Licence
 
