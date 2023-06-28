@@ -14,10 +14,26 @@ ARS is a Google Sheets file that simulates a live casino and allows players to p
 2. Players can enter their bets and press the "Execute" button to update the values.
 3. To calculate the balances of all players, select "calculateAllBalances" from the drop-down menu and press the "Execute" button.
 
-### Little explenation 
+# Little explenation 
 
 ## Dealer sheet
-![Roulette table] (main/roulette.png)
+
+### Roulette table
+![Roulette table](roulette.png)
+Il dealer avrà sott'occhio rurri i numeri della roulette e dove si trova il numero vincente. Se il numero è valido le celle corrisapondenti alle sue caratteristiche si coloreranno di verde e verrà scritto "VERO".
+
+### History and winning number
+![History of extracted numbers](history.png)
+Il dealer dovrà inserire sotto "Numero vincente" il numero uscito dalla roulette e inserire quest'ultimo nella cronologia dei numeri precedenti.
+
+### Information about players
+![players info](!tabs.png)
+Il dealer avrà sott'occhio nella tabella superiore i valori di default che devono essere cambiati in base alle proprie esigenze. Nella tabella sotto invece ci sono i valori come la scommessa, il bilancio, e la vincità per ogni giocata. Quest'ultimi non vanno cambiati in quanto sono gestiti da formule e script che lavorano autonomamente.
+
+## Player sheet
+
+### Bet, return and balance
+!
 
 ## Licence
 
