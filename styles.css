@@ -86,22 +86,23 @@ header {
   background-color: #ff9800;
 }
 
-/* About Section */
+/* Sections */
 .section {
   padding: 80px 0;
+  text-align: center;
 }
 
 .section-title {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 40px;
+  color: #fff;
 }
 
 .section-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .section-image {
@@ -118,7 +119,7 @@ header {
   margin-bottom: 20px;
 }
 
-/* Features Section */
+/* Carousel */
 .carousel {
   display: flex;
   justify-content: center;
@@ -168,8 +169,8 @@ header {
 
 .login-title {
   font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 40px;
+  .font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .login-form {
@@ -177,225 +178,48 @@ header {
   margin: 0 auto;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.login-input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
 }
 
-.login-form button {
-  width: 100%;
-  padding: 10px;
+.login-button {
+  display: inline-block;
+  padding: 12px 24px;
   background-color: #ffc107;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-form button:hover {
-  background-color: #ff9800;
-}
-
-/* Mailing List Section */
-.mailing-list-section {
-  padding: 80px 0;
-  background-color: #f7f7f7;
-  text-align: center;
-}
-
-.mailing-list-title {
-  font-size: 36px;
+  text-decoration: none;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 40px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.mailing-list-form {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.mailing-list-form input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.mailing-list-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #ffc107;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.mailing-list-form button:hover {
+.login-button:hover {
   background-color: #ff9800;
 }
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #000;
   color: #fff;
   padding: 20px;
   text-align: center;
 }
 
-.footer-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.footer-text {
+  font-size: 14px;
 }
 
-.footer-links li {
-  margin: 0 10px;
+.footer-social {
+  margin-top: 20px;
 }
 
-.footer-links a {
+.footer-social a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #ffc107;
-}
-
-/* Cookie Banner */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.cookie-banner p {
-  font-size: 14px;
-}
-
-.cookie-banner a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.cookie-banner button {
-  background-color: #ffc107;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.cookie-banner button:hover {
-  background-color: #ff9800;
-}
-
-/* Additional Styles for Live Casino Look */
-body {
-  background-color: #111;
-}
-
-header {
-  background-color: #000;
-}
-
-.nav-links a {
-  color: #fff;
-}
-
-.hero-section {
-  background-color: #000;
-}
-
-.hero-title {
-  color: #ffc107;
-}
-
-.hero-subtitle {
-  color: #fff;
-}
-
-.hero-button {
-  background-color: #ffc107;
-  color: #000;
-}
-
-.section-title {
-  color: #fff;
-}
-
-.section-text {
-  color: #fff;
-}
-
-.login-section {
-  background-color: #222;
-}
-
-.login-title {
-  color: #fff;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-  background-color: #444;
-  border: 1px solid #555;
-  color: #fff;
-}
-
-.login-form button {
-  background-color: #ffc107;
-  color: #000;
-}
-
-.mailing-list-section {
-  background-color: #111;
-}
-
-.mailing-list-title {
-  color: #fff;
-}
-
-.mailing-list-form input[type="email"] {
-  background-color: #444;
-  border: 1px solid #555;
-  color: #fff;
-}
-
-.mailing-list-form button {
-  background-color: #ffc107;
-  color: #000;
-}
-
-.footer-links a {
-  color: #fff;
-}
-
-.cookie-banner {
-  background-color: #222;
-  color: #fff;
-}
-
-.cookie-banner a {
-  color: #ffc107;
-}
-
-.cookie-banner button {
-  background-color: #ffc107;
-  color: #000;
+  margin: 0 10px;
 }
