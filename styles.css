@@ -146,7 +146,7 @@ header {
 }
 
 .carousel-dot {
-  width: 12px
+  width: 12px;
   height: 12px;
   background-color: #ccc;
   border-radius: 50%;
@@ -303,4 +303,99 @@ footer {
 
 .cookie-banner button:hover {
   background-color: #ff9800;
+}
+
+/* Additional Styles for Live Casino Look */
+body {
+  background-color: #111;
+}
+
+header {
+  background-color: #000;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+.hero-section {
+  background-color: #000;
+}
+
+.hero-title {
+  color: #ffc107;
+}
+
+.hero-subtitle {
+  color: #fff;
+}
+
+.hero-button {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.section-title {
+  color: #fff;
+}
+
+.section-text {
+  color: #fff;
+}
+
+.login-section {
+  background-color: #222;
+}
+
+.login-title {
+  color: #fff;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  background-color: #444;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.login-form button {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.mailing-list-section {
+  background-color: #111;
+}
+
+.mailing-list-title {
+  color: #fff;
+}
+
+.mailing-list-form input[type="email"] {
+  background-color: #444;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.mailing-list-form button {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.footer-links a {
+  color: #fff;
+}
+
+.cookie-banner {
+  background-color: #222;
+  color: #fff;
+}
+
+.cookie-banner a {
+  color: #ffc107;
+}
+
+.cookie-banner button {
+  background-color: #ffc107;
+  color: #000;
 }
