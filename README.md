@@ -27,7 +27,7 @@ The Dealer will be looking at the Roulette numbers to see where the winning numb
 The dealer should enter the number that came out of the roulette wheel in the "Winning Number" column and enter it in the history of previous numbers.
 
 ### Information about players
-![players info](!tabs.png)
+![players info](tabs.png)
 The Dealer will keep an eye on the default values in the upper table, which must be changed according to his needs. The table below shows values such as the bet, balance and winnings for each bet. These should not be changed as they are handled by formulas and scripts that work independently.
 
 ## Player sheet
