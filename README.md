@@ -1,4 +1,4 @@
-![Brand Image]("Firefly ARS-roulette and chips 85620.png")
+![Brand Image](brand-image.png)
 
 # Automated Roulette System (ARS) 🎰
 
