@@ -1,3 +1,5 @@
+![Brand Image](Firefly ARS-roulette and chips 85620.png)
+
 # Automated Roulette System (ARS) 🎰
 
 ARS is a Google Sheets file that simulates a live casino and allows players to place bets on a physical roulette wheel. The file uses a set of formulas and a script to calculate bets, winnings and player balance.
