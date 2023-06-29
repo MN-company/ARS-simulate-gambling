@@ -1,36 +1,45 @@
 function calculateBalance_user1() {
+
+  // Selecting the sheet and loading table values for the player
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
   var cashInRange = sheet.getRange("Q17");
   var a2Range = sheet.getRange("T17");
   var a4Range = sheet.getRange("S17");
   var a6Range = sheet.getRange("R17");
 
-  // Rimuovi la formattazione come valuta dalle celle cash-in, A2 e A4
+  // Removal of currency formatting from deposit, bet and win cells
   cashInRange.setNumberFormat("General");
   a2Range.setNumberFormat("General");
   a4Range.setNumberFormat("General");
   a6Range.setNumberFormat("General");
 
+  // Gets the value without formatting the cell
   var cashInValue = cashInRange.getDisplayValue();
   var a2Value = a2Range.getDisplayValue();
   var a4Value = a4Range.getDisplayValue();
   var a6Value = a6Range.getDisplayValue();
   
-  // Controllo se i valori di T17 e S17 sono validi
+  // Checking if T17 and S17 values are valid
   if (isNaN(a2Value) || isNaN(a4Value)) {
-    console.log("Errore: I valori di T17 o S17 non sono validi.");
-    return;
+    console.log("Error: The values of T17 or S17 are invalid.");
+    console.log("Setting cells to 0, and the bet will be ignored");
+
+    // If the values are not numbers, they will be set to zero and the budget will not be affected
+    a2Range.setValue(0);
+    a4Range.setValue(0);
+    a2Value = 0;
+    a4Value = 0;
   }
 
-  // Controllo se il valore precedente di R17 è valido
+  // Check if the previous value of R17 is valid
   if (isNaN(a6Value) || a6Value === "") {
-    console.log("Errore: Il valore precedente di R17 non è valido.");
-    console.log("Imposto la cella R17 su 0");
+    console.log("Error: The previous value of R17 is invalid.");
+    console.log("Setting cell R17 to 0");
     a6Range.setValue(0);
     a6Value = 0;
   }
 
-  // Log dei valori delle celle
+  // Logging of cell values
   console.log("cashInValue: " + cashInValue);
   console.log("a2Value: " + a2Value);
   console.log("a4Value: " + a4Value);
@@ -39,7 +48,7 @@ function calculateBalance_user1() {
   var balance = parseInt(cashInValue) + (parseInt(a2Value) - parseInt(a4Value));
   var previousBalance = parseInt(a6Value);
 
-  // Log del valore precedente di A6
+  // Log of the previous value of balance
   console.log("previousBalance: " + previousBalance);
 
   var isFirstExecution = (previousBalance === 0);
@@ -51,35 +60,41 @@ function calculateBalance_user1() {
   else 
   {
     a6Range.setValue(previousBalance + parseInt(balance));
-    cashInRange.setValue(0); // se mai ci dovessero essere errori
+    cashInRange.setValue(0); 
   }
 }
 
 function calculateBalance_user2() {
+
+  // Selecting the sheet and loading table values for the player
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
   var cashInRange = sheet.getRange("Q18");
   var a2Range = sheet.getRange("T18");
   var a4Range = sheet.getRange("S18");
   var a6Range = sheet.getRange("R18");
 
-  // Rimuovi la formattazione come valuta dalle celle cash-in, A2 e A4
+  // Removal of currency formatting from deposit, bet and win cells
   cashInRange.setNumberFormat("General");
   a2Range.setNumberFormat("General");
   a4Range.setNumberFormat("General");
   a6Range.setNumberFormat("General");
 
+  // Gets the value without formatting the cell
   var cashInValue = cashInRange.getDisplayValue();
   var a2Value = a2Range.getDisplayValue();
   var a4Value = a4Range.getDisplayValue();
   var a6Value = a6Range.getDisplayValue();
   
-  // Controllo se i valori di T18 e S18 sono validi
+  // Checking if T18 and S18 values are valid
   if (isNaN(a2Value) || isNaN(a4Value)) {
     console.log("Errore: I valori di T18 o S18 non sono validi.");
-    return;
+    a2Range.setValue(0);
+    a4Range.setValue(0);
+    a2Value = 0;
+    a4Value = 0;
   }
 
-  // Controllo se il valore precedente di R18 è valido
+  // Check if the previous value of R18 is valid
   if (isNaN(a6Value) || a6Value === "") {
     console.log("Errore: Il valore precedente di R18 non è valido.");
     console.log("Imposto la cella R18 su 0");
@@ -87,7 +102,7 @@ function calculateBalance_user2() {
     a6Value = 0;
   }
 
-  // Log dei valori delle celle
+  // Logging of cell values
   console.log("cashInValue: " + cashInValue);
   console.log("a2Value: " + a2Value);
   console.log("a4Value: " + a4Value);
@@ -96,7 +111,7 @@ function calculateBalance_user2() {
   var balance = parseInt(cashInValue) + (parseInt(a2Value) - parseInt(a4Value));
   var previousBalance = parseInt(a6Value);
 
-  // Log del valore precedente di A6
+  // Log of the previous value of balance
   console.log("previousBalance: " + previousBalance);
 
   var isFirstExecution = (previousBalance === 0);
@@ -108,30 +123,33 @@ function calculateBalance_user2() {
   else 
   {
     a6Range.setValue(previousBalance + parseInt(balance));
-    cashInRange.setValue(0); // se mai ci dovessero essere errori
+    cashInRange.setValue(0); 
   }
 }
 
 function calculateAllBalance(){
 
-  // Foglio
+  // Load sheet
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
 
-  // Celle che indicano la validità della giocata
+  // Cells indicating the validity of the bet
   var valido_1 = sheet.getRange("U17");
   var valido_2 = sheet.getRange("U17");
 
+  // Gets cell values
   var validValue_1 = valido_1.getDisplayValue();
   var validValue_2 = valido_2.getDisplayValue();
 
+  // Print cell values
   console.log(validValue_1);
   console.log(validValue_2);
  
-  if (validValue_1 == "NON_VALIDO") {
-    console.warn("Errore: La puntata del giocatore 1 supera il suo bilancio, la sua giocata verrà ignorata");
+  if (validValue_1 == "NON_VALID") {
+    console.warn("Error: Player 1's bet exceeds his budget, his bet will be ignored");
 
-    var paoloSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Paolo");
-    var formulaRanges = paoloSheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41", "B18","B19","E18","E19","H18","H19","K18","K19","B28:M28","B35:C35","E35","F35","H35","I35","K35","L35","B39:C39","E39","F39","H39:I39","K39:L39","B46:M46"]);
+    // Deleting cell values where the player has bet and on which numbers he has bet
+    var paoloSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("user1");
+    var formulaRanges = user1Sheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41", "B18","B19","E18","E19","H18","H19","K18","K19","B28:M28","B35:C35","E35","F35","H35","I35","K35","L35","B39:C39","E39","F39","H39:I39","K39:L39","B46:M46"]);
 
     formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
   }
@@ -139,14 +157,17 @@ function calculateAllBalance(){
   {
     calculateBalance_user1();
 
-    var paoloSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Paolo");
-    var formulaRanges = paoloSheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41"]);
+    // Deleting the player's win and bet cell values
+    var user1Sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("user1");
+    var formulaRanges = user1Sheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41"]);
     formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
   }
 
-  if (validValue_2 == "NON_VALIDO") {
+  if (validValue_2 == "NON_VALID") {
     console.warn("Errore: La puntata del giocatore 2 supera il suo bilancio, la sua giocata verrà ignorata");
-    var testSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Test");
+    
+    // Deleting cell values where the player has bet and on which numbers he has bet
+    var user2Sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("user2");
     var formulaRanges = testSheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41", "B18","B19","E18","E19","H18","H19","K18","K19","B28:M28","B35:C35","E35","F35","H35","I35","K35","L35","B39:C39","E39","F39","H39:I39","K39:L39","B46:M46"]);
 
     formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
@@ -155,8 +176,9 @@ function calculateAllBalance(){
   {
     calculateBalance_user2();
 
-    var testSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Test");
-    var formulaRanges = testSheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41"]);
+    // Deleting the player's win and bet cell values
+    var user2Sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("user2");
+    var formulaRanges = user2Sheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41"]);
     formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
   }
 
@@ -164,7 +186,7 @@ function calculateAllBalance(){
 
 function defaultValue(){
 
-  // Foglio
+  // Load sheet
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
 
   var aaa = sheet.getRange("Q2");
@@ -172,29 +194,30 @@ function defaultValue(){
   var ccc = sheet.getRange("R2");
   var ddd = sheet.getRange("R3");
 
-  // Valori di default
-  //Cash-in
+  // Default values
+
+  // Deposit
   var defCash1 = aaa.getDisplayValue();
   var defCash2 = bbb.getDisplayValue();
   
-  // Bilancio
+  // Balance
   var defBil1 = ccc.getDisplayValue();
   var defBil2 = ddd.getDisplayValue();
 
-  console.log("I valori di default sono:");
-  console.log("Utente 1: " + defCash1);
-  console.log("Utente 1: " + defBil1);
+  console.log("The default values are:");
+  console.log("User 1: " + defCash1);
+  console.log("User 1: " + defBil1);
 
-  console.log("I valori di default sono:");
-  console.log("Utente 1: " + defCash2);
-  console.log("Utente 2: " + defBil2);
+  console.log("The default values are:");
+  console.log("User 2: " + defCash2);
+  console.log("User 2: " + defBil2);
 
-  // Celle da sovrascrivere
-  // Cash-in
+  // Cells to be overwritten
+  // Deposit 
   var currCash1 = sheet.getRange("Q17");
   var currCash2 = sheet.getRange("Q18");
 
-  // Bilancio
+  // Balance
   var currBil1 = sheet.getRange("R17");
   var currBil2 = sheet.getRange("R18");
 
@@ -202,22 +225,20 @@ function defaultValue(){
   currCash2.setValue(defCash2);
   currBil1.setValue(defBil1);
   currBil2.setValue(defBil2);
-
   
 
-  // Vista del dealer
+  // Vista del dealer - History
   var formulaRanges = sheet.getRangeList(["A20:G31"]);
   formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
 
-  // Paolo
-  var paoloSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Paolo");
+  // user1
+  var paoloSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("user1");
   var formulaRanges = paoloSheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41", "B18","B19","E18","E19","H18","H19","K18","K19","B28:M28","B35:C35","E35","F35","H35","I35","K35","L35","B39:C39","E39","F39","H39:I39","K39:L39","B46:M46"]);
 
-  // Test
-  var testSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Test");
+  // user2
+  var testSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("user2");
   var formulaRanges = testSheet.getRangeList(["B5:M5", "I14:M14", "C22", "F22", "I22", "L22", "B31", "M31", "C37", "F37", "I37", "L37", "C41", "F41", "I41", "L41", "B18","B19","E18","E19","H18","H19","K18","K19","B28:M28","B35:C35","E35","F35","H35","I35","K35","L35","B39:C39","E39","F39","H39:I39","K39:L39","B46:M46"]);
 
-  // Cancella le formule delle celle
   formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
 
 }
