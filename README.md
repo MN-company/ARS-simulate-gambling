@@ -6,7 +6,7 @@ ARS is a Google Sheets file that simulates a live casino and allows players to p
 
 ## Installation
 
-1. Go to the [ARS sheet link](insert-link-here) and make a copy of the file.
+1. Go to the [ARS sheet link](https://docs.google.com/spreadsheets/d/14G8uvZQG2EfwmBMk9HPM--t2D0ymGmPYAxfy_NaDtZI/edit#gid=255657849) and make a copy of the file.
 2. In the duplicate sheet, go to "Extensions" and select "Apps Script" from the drop down menu.
 3. Select the 'defaultValue' function and follow the instructions to sign in to your Google account. The script will only work on your sheet and will not share data with anyone else.
 
