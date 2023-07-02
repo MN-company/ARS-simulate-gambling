@@ -1,4 +1,4 @@
-![Brand Image](brand-image-no.png)
+![Brand Image](brand-image-no-no.png)
 
 # Automated Roulette System (ARS) 🎰
 
