@@ -21,17 +21,17 @@ ARS is a Google Sheets file that simulates a live casino and allows players to p
 ## Dealer sheet
 
 ### Roulette table
-![Roulette table](roulette.png)
+![Roulette table](roulette_1.png)
 
 The Dealer will be looking at the Roulette numbers to see where the winning number is located. The cells corresponding to its characteristics will turn green and "TRUE" will be written if the number is valid.
 
 ### History and winning number
-![History of extracted numbers](history.png) 
+![History of extracted numbers](history_1.png) 
 
 The dealer should enter the number that came out of the roulette wheel in the "Winning Number" column and enter it in the history of previous numbers.
 
 ### Information about players
-![players info](tabs.png)
+![players info](tabs_1.png)
 
 The Dealer will keep an eye on the default values in the upper table, which must be changed according to his needs. The table below shows values such as the bet, balance and winnings for each player. These should not be changed as they are handled by formulas and scripts that work independently.
 
