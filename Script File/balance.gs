@@ -2,19 +2,16 @@ function calculateBalance_user1() {
 
   // Selecting the sheet and loading table values for the player
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
-  var cashInRange = sheet.getRange("Q17");
   var a2Range = sheet.getRange("T17");
   var a4Range = sheet.getRange("S17");
   var a6Range = sheet.getRange("R17");
 
   // Removal of currency formatting from deposit, bet and win cells
-  cashInRange.setNumberFormat("General");
   a2Range.setNumberFormat("General");
   a4Range.setNumberFormat("General");
   a6Range.setNumberFormat("General");
 
   // Gets the value without formatting the cell
-  var cashInValue = cashInRange.getDisplayValue();
   var a2Value = a2Range.getDisplayValue();
   var a4Value = a4Range.getDisplayValue();
   var a6Value = a6Range.getDisplayValue();
@@ -39,48 +36,26 @@ function calculateBalance_user1() {
     a6Value = 0;
   }
 
-  // Logging of cell values
-  console.log("cashInValue: " + cashInValue);
-  console.log("a2Value: " + a2Value);
-  console.log("a4Value: " + a4Value);
-  console.log("a6Value: " + a6Value);
-
-  var balance = parseInt(cashInValue) + (parseInt(a2Value) - parseInt(a4Value));
+  var balance =(parseInt(a2Value) - parseInt(a4Value));
   var previousBalance = parseInt(a6Value);
 
-  // Log of the previous value of balance
-  console.log("previousBalance: " + previousBalance);
-
-  var isFirstExecution = (previousBalance === 0);
-
-  if (isFirstExecution) {
-    a6Range.setValue(parseInt(cashInValue) + parseInt(balance));
-    cashInRange.setValue(0);
-  } 
-  else 
-  {
-    a6Range.setValue(previousBalance + parseInt(balance));
-    cashInRange.setValue(0); 
-  }
+  a6Range.setValue(previousBalance + balance);
 }
 
 function calculateBalance_user2() {
 
   // Selecting the sheet and loading table values for the player
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
-  var cashInRange = sheet.getRange("Q18");
   var a2Range = sheet.getRange("T18");
   var a4Range = sheet.getRange("S18");
   var a6Range = sheet.getRange("R18");
 
   // Removal of currency formatting from deposit, bet and win cells
-  cashInRange.setNumberFormat("General");
   a2Range.setNumberFormat("General");
   a4Range.setNumberFormat("General");
   a6Range.setNumberFormat("General");
 
   // Gets the value without formatting the cell
-  var cashInValue = cashInRange.getDisplayValue();
   var a2Value = a2Range.getDisplayValue();
   var a4Value = a4Range.getDisplayValue();
   var a6Value = a6Range.getDisplayValue();
@@ -102,33 +77,21 @@ function calculateBalance_user2() {
     a6Value = 0;
   }
 
-  // Logging of cell values
-  console.log("cashInValue: " + cashInValue);
-  console.log("a2Value: " + a2Value);
-  console.log("a4Value: " + a4Value);
-  console.log("a6Value: " + a6Value);
-
-  var balance = parseInt(cashInValue) + (parseInt(a2Value) - parseInt(a4Value));
+  var balance =(parseInt(a2Value) - parseInt(a4Value));
   var previousBalance = parseInt(a6Value);
 
-  // Log of the previous value of balance
-  console.log("previousBalance: " + previousBalance);
-
-  var isFirstExecution = (previousBalance === 0);
-
-  if (isFirstExecution) {
-    a6Range.setValue(parseInt(cashInValue) + parseInt(balance));
-    cashInRange.setValue(0);
-  } 
-  else 
-  {
-    a6Range.setValue(previousBalance + parseInt(balance));
-    cashInRange.setValue(0); 
-  }
+  a6Range.setValue(previousBalance + balance);
 }
 
 function calculateAllBalance(){
 
+  var scriptProperties = PropertiesService.getScriptProperties();
+  var lightning = scriptProperties.getProperty('lightning');
+  ui.alert(lightning);
+  if (lightning == 'yes') {
+    lightning_mode();
+  }
+  
   // Load sheet
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
 
@@ -143,7 +106,10 @@ function calculateAllBalance(){
   // Print cell values
   console.log(validValue_1);
   console.log(validValue_2);
- 
+
+  var timer = scriptProperties.getProperty('timer');
+  Utilities.sleep(timer) // Avvia lo spin dal menù prima di far routare la roulette
+
   if (validValue_1 == "NON_VALID") {
     console.warn("Error: Player 1's bet exceeds his budget, his bet will be ignored");
 
