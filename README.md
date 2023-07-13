@@ -60,11 +60,10 @@ ARS is released under the terms of the GNU licence.
 
 ARS is currently in beta stage and can be used without any problems. Some values in the script can be changed to customise player names, but this also involves changing references. See FAQ.
 
-## Future goals
-
-- Create a button to simplify the execution of the script, without having to manually change the function to be executed and without opening the Apps script.
-- Create a method that decide if you have to run calculateAllBalance or load defaultValue
-- Develop overlays for OBS or Streamlabs to enhance the streaming experience.
+## Future goals --> THIS SECTION IS MOVED INTO THE GITHUB PROJECTS
 
 # FAQ --> THIS SECTION IS MOVED INTO THE WIKI
+
+# Contacts
+If you want collaborate or you have any question you can contact me! gobberpaolo92@gmail.com
 
