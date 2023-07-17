@@ -42,7 +42,7 @@ The Dealer will keep an eye on the default values in the upper table, which must
 
 These cells delegate the calculation of bet, win/loss and balance to formulas.
 
-### Normal betting 
+### Simple betting 
 ![outside bet](regularplayer.png)
 
 In all grey cells the player must enter the amount of money to be allocated to this bet.
@@ -65,5 +65,5 @@ ARS is currently in beta stage and can be used without any problems. Some values
 # FAQ --> THIS SECTION IS MOVED INTO THE WIKI
 
 # Contacts
-If you want collaborate or you have any question you can contact me! gobberpaolo92@gmail.com
+If you want collaborate or you have any question you can open an issue
 
