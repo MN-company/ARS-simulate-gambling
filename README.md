@@ -2,19 +2,37 @@
 
 # Automated Roulette System (ARS) 🎰
 
-ARS is a Google Sheets file that simulates a live casino and allows players to place bets on a physical roulette wheel. The file uses a set of formulas and a script to calculate bets, winnings and player balance.
+The ARS project is a Google Sheets file that provides a simulation of a live casino, allowing players to place bets on a physical roulette wheel. The file uses formulas and a script to calculate players' bets, potential winnings and remaining balance. The goal of the project is to create an interactive and realistic gaming experience through the spreadsheet, allowing players to experience the thrill of gambling without having to physically travel to a casino. By using Google Sheets as the platform, the file can be easily shared with other players, allowing for virtual competition or just having fun with friends.
 
 ## Installation
 
-1. Go to the [ARS sheet link](https://docs.google.com/spreadsheets/d/14G8uvZQG2EfwmBMk9HPM--t2D0ymGmPYAxfy_NaDtZI/edit#gid=255657849) and make a copy of the file.
-2. In the duplicate sheet, go to "Extensions" and select "Apps Script" from the drop down menu.
-3. Select the 'defaultValue' function and follow the instructions to sign in to your Google account. The script will only work on your sheet and will not share data with anyone else.
+1. Go to the  and make a copy of the file.
+To use ARS, follow the steps below:
+
+Click on the [ARS spreadsheet link](https://docs.google.com/spreadsheets/d/14G8uvZQG2EfwmBMk9HPM--t2D0ymGmPYAxfy_NaDtZI/edit#gid=255657849) to access the spreadsheet.
+Once the sheet is open, make a copy of the file by selecting 'File' from the menu bar and selecting 'Make a copy'.
+When the spreadsheet opens, you will be asked for the dealer's email address. Enter the desired email address. (If you wish to disable this option, see the wiki for further instructions).
+You will see a new menu appear. Select 'Spin' from the menu and sign in to your Google Account when prompted.
+The dealer will now be able to run the script directly from the menu.
+What if the menu does not generate?
+Sometimes Google requires authentication in order to generate the menu. If the authorisation pop-up does not appear, follow these alternative steps:
+
+Open the 'Extensions' menu.
+Select 'Apps Script'.
+Run the 'onOpen' function.
 
 ## How to use
 
-1. After running the 'defaultValue' function, all values will be set to those in the table.
-2. Players can enter their bets and the dealer have to click on the "Execute" button to update the values.
-3. To calculate the balances of all players, select "calculateAllBalances" from the drop-down menu and press the "Execute" button.
+Here are the steps to follow once you have authenticated yourself and set up your merchant email:
+
+From the "ARS" menu at the top, select "Settings".
+The settings menu allows you to set the deposit amounts for each player. Enter the desired deposit amount for each player and save the settings.
+Once the deposits have been set, the players can begin to place their bets. They can enter their bet amounts in the designated cells or areas.
+When all players have placed their bets and are ready to proceed, the dealer should select "Spin" from the "ARS" menu.
+The script will then perform the necessary calculations using a simplified B-B+R (Balance, Bet, Return) formula.
+B (Balance): The script will deduct the bet amount from each player's balance.
+B+ (Bet+): The script will calculate the potential winnings based on the bet amount and the roulette outcome.
+R (Return): The script will update each player's balance by adding any winnings to their balance.
 
 # Little explenation 
 
