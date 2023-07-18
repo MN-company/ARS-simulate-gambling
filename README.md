@@ -43,10 +43,17 @@ R (Return): The script will update each player's balance by adding any winnings 
 
 The Dealer will be looking at the Roulette numbers to see where the winning number is located. The cells corresponding to its characteristics will turn green and "TRUE" will be written if the number is valid.
 
-### History and winning number
+### History and winning number + Other roulette mode
 ![History of extracted numbers](history_1.png) 
 
 The dealer should enter the number that came out of the roulette wheel in the "Winning Number" column and enter it in the history of previous numbers.
+
+### Lightning Roulette Mode
+- Random number generation: The script includes a function that generates random numbers up to 60. However, if a generated number is greater than 36, it is cancelled or ignored. This ensures that only numbers within the valid range for roulette (1-36) are considered.
+- Multipliers: Multipliers for numbers are randomly selected from an array. The array consists of 16 numbers and the selection is done randomly; however, there are repetitions for more likely to have lower multipliers.
+
+### Hybrid number (ex. Double Spin Mode)
+- The hybrid number, formerly called hybrid double spin mode, is a reference to the use of a digital roulette wheel. This number is not part of the formulas, but it is present and ready to be implemented, since all you have to do is change the formulas and adapt them to your needs. 
 
 ### Information about players
 ![players info](tabs_1.png)
@@ -87,7 +94,7 @@ ARS is released under the terms of the GNU licence.
 
 ## Project Status
 
-ARS is currently in beta stage and can be used without any problems. Some values in the script can be changed to customise player names, but this also involves changing references. See FAQ.
+ARS is still in beta, it is currently at version 0.9, this means that version 1.0.0 will be released, which will be the first final version with no bugs and no upcoming official changes to the code. I will not spend much time on this project anymore, there may be new features, but I want the community to take care of it. What will be developed is the "Extra" branch, which will star in hosting the code for the official website, which will only be a demo gambling site and will not take over the real gambling world for now. It will also be a reference site for new players as it will host a blog section.
 
 # FAQ --> THIS SECTION IS MOVED INTO THE WIKI
 
