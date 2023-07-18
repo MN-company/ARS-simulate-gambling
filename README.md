@@ -51,14 +51,25 @@ The dealer should enter the number that came out of the roulette wheel in the "W
 ### Information about players
 ![players info](tabs_1.png)
 
-The Dealer will keep an eye on the default values in the upper table, which must be changed according to his needs. The table below shows values such as the bet, balance and winnings for each player. These should not be changed as they are handled by formulas and scripts that work independently.
+The table on the Dealer's sheet serves as a valuable tool for managing players' bets and winnings in ARS. Let's explore its columns and their functions:
+
+- Column Q (Cash In): This column represents the initial "Cash In" amount for each player. It records the initial amount that each player has available for betting.
+  
+- Column R (Balance): The Balance column tracks each player's remaining balance after bets have been placed and winnings have been paid. The balance is automatically updated based on bets and winnings.
+  
+- Column S (Bet): In this column, the dealer can enter the bets made by the players. Each player's bet amount can be recorded in the corresponding cell of column S.
+  
+- Column T (Win): The "Win" column shows each player's winnings. When a player wins a bet, the winning amount is recorded in this column. This allows for a clear and organized tracking of each player's winnings.
+  
+- Last Column (Validity): This column determines whether a player's bet is "VALID" or "NON_VALID". It is used to check if a bet exceeds the player's available budget. If the bet exceeds the budget, it will be marked "NON_VALID" to prevent players from placing bets that exceed their allotted budget.
+
 
 ## Player sheet
 
 ### Bet, return and balance
 ![Bet, return and balance](RBB.png)
 
-These cells delegate the calculation of bet, win/loss and balance to formulas.
+These cells are simply repetitions but serving the player not to constantly change folio. 
 
 ### Simple betting 
 ![outside bet](regularplayer.png)
@@ -78,10 +89,5 @@ ARS is released under the terms of the GNU licence.
 
 ARS is currently in beta stage and can be used without any problems. Some values in the script can be changed to customise player names, but this also involves changing references. See FAQ.
 
-## Future goals --> THIS SECTION IS MOVED INTO THE GITHUB PROJECTS
-
 # FAQ --> THIS SECTION IS MOVED INTO THE WIKI
-
-# Contacts
-If you want collaborate or you have any question you can open an issue
 
