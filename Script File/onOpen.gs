@@ -1,13 +1,14 @@
 function onOpen() {
-  var scriptProperties = PropertiesService.getScriptProperties();
-  lightning = scriptProperties.getProperty('lightning');
-  if (lightning != 'no' || lightning != 'yes') {
-    lightning = 'no';
-    scriptProperties.setProperty('lightning', lightning);
-  }
   createMenu();
+  var scriptProperties = PropertiesService.getScriptProperties();
 
-
+  var dealerEmail = scriptProperties.getProperty('dealerEmail');
+  if (dealerEmail === null || dealerEmail === 'gobberpaolo92@gmail.com') {
+    var ui = SpreadsheetApp.getUi();
+    var response = ui.prompt("Inserisci l'email del dealer");
+    var dealerEmailInput = response.getResponseText();
+    scriptProperties.setProperty("dealerEmail", dealerEmailInput);
+  }
 }
 
 function defaultValue(){
@@ -33,8 +34,8 @@ function defaultValue(){
 
   // Clear values
 
-  // Vista del dealer - History + Lightning + Winning number
-  var formulaRanges = sheet.getRangeList(["A20:G31", "I24:M26", "I20:J21"]);
+  // Vista del dealer - History + Lightning + Winning number + Double Spin
+  var formulaRanges = sheet.getRangeList(["A20:G31", "I24:M26", "I20:J21", "L20"]);
   formulaRanges.clear({ contentsOnly: true, skipFilteredRows: true });
 
   // user1
