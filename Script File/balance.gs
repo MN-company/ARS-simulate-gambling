@@ -83,13 +83,85 @@ function calculateBalance_user2() {
   a6Range.setValue(previousBalance + balance);
 }
 
+function lightning_mode() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
+  var moltiplicatore = [50, 50, 50, 50, 100, 100, 100, 100, 150, 150, 150, 200, 200, 300, 400, 500];
+  
+  // Genera un numero casuale da 0 a 60
+  var light_number1 = Math.floor(Math.random() * 37); // Il primo ci deve essere sempre
+  var light_number2 = Math.floor(Math.random() * 61);
+  var light_number3 = Math.floor(Math.random() * 61);
+  var light_number4 = Math.floor(Math.random() * 61);
+  var light_number5 = Math.floor(Math.random() * 61);
+  
+  sheet.getRange('I24').setValue(light_number1);
+  var index = Math.floor(Math.random() * 16);
+  var winX = moltiplicatore[index];
+  sheet.getRange('I26').setValue(winX)
+
+  // Imposta il valore della cella J24
+  if (light_number2 > 36) {
+    sheet.getRange('J24').setValue(null);
+    sheet.getRange('J26').setValue(null);
+  } else {
+    sheet.getRange('J24').setValue(light_number2);
+    var index = Math.floor(Math.random() * 16);
+    var winX = moltiplicatore[index];
+    sheet.getRange('J26').setValue(winX);
+  }
+
+  // Imposta il valore della cella K24
+  if (light_number3 > 36) {
+    sheet.getRange('K24').setValue(null);
+    sheet.getRange('K26').setValue(null);
+  } else {
+    sheet.getRange('K24').setValue(light_number3);
+    var index = Math.floor(Math.random() * 16);
+    var winX = moltiplicatore[index];
+    sheet.getRange('K26').setValue(winX);
+  }
+
+  // Imposta il valore della cella L24
+  if (light_number4 > 36) {
+    sheet.getRange('L24').setValue(null);
+    sheet.getRange('L26').setValue(null);
+  } else {
+    sheet.getRange('L24').setValue(light_number4);
+    var index = Math.floor(Math.random() * 16);
+    var winX = moltiplicatore[index];
+    sheet.getRange('L26').setValue(winX);
+  }
+
+  // Imposta il valore della cella M24
+  if (light_number5 > 36) {
+    sheet.getRange('M24').setValue(null);
+    sheet.getRange('M26').setValue(null);
+  } else {
+    sheet.getRange('M24').setValue(light_number5);
+    var index = Math.floor(Math.random() * 16);
+    var winX = moltiplicatore[index];
+    sheet.getRange('M26').setValue(winX);
+  }
+}
+
+function doublespin(){
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Vista del dealer");
+  
+  // Genera un numero casuale da 0 a 36
+  var hybrid_number = Math.floor(Math.random() * 37); 
+  sheet.getRange('L20').setValue(hybrid_number)
+}
+
 function calculateAllBalance(){
 
   var scriptProperties = PropertiesService.getScriptProperties();
-  var lightning = scriptProperties.getProperty('lightning');
-  ui.alert(lightning);
-  if (lightning == 'yes') {
+
+  if (scriptProperties.getProperty('lightning') == 'yes') {
     lightning_mode();
+  }
+
+  if (scriptProperties.getProperty('doubleSpin') == 'yes') {
+    doublespin();
   }
   
   // Load sheet
@@ -102,10 +174,6 @@ function calculateAllBalance(){
   // Gets cell values
   var validValue_1 = valido_1.getDisplayValue();
   var validValue_2 = valido_2.getDisplayValue();
-
-  // Print cell values
-  console.log(validValue_1);
-  console.log(validValue_2);
 
   var timer = scriptProperties.getProperty('timer');
   Utilities.sleep(timer) // Avvia lo spin dal menù prima di far routare la roulette
